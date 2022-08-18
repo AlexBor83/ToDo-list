@@ -5,8 +5,14 @@ const headerInput = document.querySelector('.header-input');
 const todoList = document.querySelector('.todo-list');
 const todoCompleted = document.querySelector('.todo-completed');
 
-const toDoData = JSON.parse(localStorage.getItem('BD'));
-render();
+let toDoData = [];
+
+if (JSON.parse(localStorage.getItem('BD'))) {
+  toDoData = JSON.parse(localStorage.getItem('BD'));
+  render();
+}
+
+
 
 function render () {
   todoList.innerHTML = '';
